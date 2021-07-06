@@ -21,28 +21,10 @@ class CPilha
 		bool pop ( Type &pop_to );
 		bool push ( Type push_this );
 
-        CPilha& operator=(const CPilha<Type>& p)
+        CPilha& operator=(const CPilha<Type>& p);
 	
 	
-	friend ostream& operator << ( ostream& output, const CPilha<Type>& pilha) {
-        output << "Pilha : {";
-        for(int i = 0; i < pilha.m_tamanho; i++) {
-            output << pilha.m_dados[i];
-            if(i < pilha.m_tamanho - 1) {
-                output << ", ";
-            }
-        }
-        output << "}";
-
-        return output;
-    }
-	friend istream& operator >> ( istream& input, CPilha<Type>& pilha){
-        for(int i = 0; i < pilha.m_tamanho; i++) {
-            cout << "insira um elemento na pilha: ";
-            input >> pilha.m_dados[i];
-        }
-
-        return input;
-    }
+	friend ostream& operator << ( ostream& output, const CPilha<Type>& pilha);
+	friend istream& operator >> ( istream& input, CPilha<Type>& pilha);
 };
 #endif
